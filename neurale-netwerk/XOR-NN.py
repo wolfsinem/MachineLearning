@@ -36,23 +36,19 @@ def sigmoid_derivative(self,x):
 class Neuron:
     """
     representing each neuron in the network.
-        - for every input, multiply by its weight
-        - sum all of the weighted inputs
-        - compute the output w sigmoid 
     """
 
-    def __init__(self, input_neuron, weight_neuron, bias_weight):
+    def __init__(self, input_neuron, weight_neuron, bias_weight, activation_function):
         """
         param: input_neuron = given input in the first layer
         param: weight_neuron = factor of how important each neuron is
-        param: bias_weight = 
+        param: bias_weight = bias is added to weighted sum. Used to shift result of AF towards positive or negative side
+        param: activation_function = computed value is def into the activation function which then prepares an output
         """
         self.input_neuron = input_neuron 
         self.weight_neuron = weight_neuron
-        self.bias_weight = rand()
-
-        self.last_output = 0
-        self.last_input = []
+        self.bias_weight = bias_weight
+        self.activation_function = activation_function
 
 
     def get_output(self):
@@ -85,12 +81,15 @@ class Neural_network:
     """
     Builds a neural network of neurons, topology is a list of layers, with 
     number of neurons per layer; e.g.
+
+    input_layer = 2
+    hidden_layer = 2
+    output_layer = 1 
     """"
         self.input_layer = input_layer
         self.hidden_layer = hidden_layer
         self.output_layer = output_layer
 
-        hidden_weights = np.random.uniform(size=(self.input_layer,self.hidden_layer))
         pass
 
     
