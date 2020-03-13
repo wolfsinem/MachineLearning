@@ -43,10 +43,11 @@ probabilities = sum(softmax_functie(logits))
 print(softmax_functie(logits)) #[0.00928666 0.04161993 0.11313471 0.8359587]
 print(probabilities)
 
-"""Plot de Softmax curves"""
+"""Plot de Softmax"""
 def plot_me(logits):
-    scores = np.vstack([logits, np.ones_like(logits), 0.2 * np.ones_like(logits)])
-    plt.plot(logits,softmax_functie(logits).T, linewidth=2)
+    plt.scatter(logits,softmax_functie(logits))
+    plt.xlabel('Logits')
+    plt.ylabel('Probability')
     plt.show()
 
-# plot_me(logits)
+plot_me(logits)
