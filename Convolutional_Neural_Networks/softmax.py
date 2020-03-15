@@ -1,6 +1,6 @@
 """
 numpy: maak gebruik van grondgetal 'e'
-matplotlib: grafiek plotten van de softmax curve
+matplotlib: grafiek plotten
 """
 import numpy as np
 import matplotlib.pyplot as plt
